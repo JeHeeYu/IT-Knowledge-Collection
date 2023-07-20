@@ -4,4 +4,4 @@
 
 # Database
 
-### - [트랜잭션(Transaciton)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Database/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98(Transaction)/README.md)
+- [트랜잭션(Transaciton)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Database/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98(Transaction)/README.md)
