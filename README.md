@@ -43,10 +43,29 @@
   <br>
 
   ## 트리 순회(Traversal) 방법
-  트리의 순회 방법으로 전위(Pre-Order) 순회, 중위(In-Order) 순회, 후위(Post-Order) 순회가 있다.
+  트리의 순회 방법으로 전위(Prorder) 순회, 중위(Inorder) 순회, 후위(Postorder) 순회가 있다.
 
-  ### 전위 순회(Pre-Order)
-  전위 순회는 노드를 먼저 방문하고 그 다음 현재 노드의 왼쪽 하위 노드를, 마지막으로 하위 노드를 재귀적으로 방문한다.
+  ### 전위 순회(Preorder)
+  전위 순회는 노드를 먼저 방문하고 그 다음 현재 노드의 왼쪽 하위 노드를, 마지막으로 하위 노드를 재귀적으로 방문하는 방법을 말한다.
+  <p align="center">
+    <img src="https://github.com/JeHeeYu/IT-Knowledge-Collection/assets/87363461/e5f6a5b8-fb70-4704-a0f1-9e651e5999c0" width="400" height="200">
+  </p>
+  <br>
+
+  ### 중위 순회(Inorder)
+  중위 순회는 왼쪽 노드를 먼저 방문하고, 그 다음 현재 노드, 마지막으로 오른쪽 노드를 방문하는 방법을 말한다.
+  <p align="center">
+    <img src="https://github.com/JeHeeYu/IT-Knowledge-Collection/assets/87363461/52e88a8d-0c20-456f-811c-ecea1e28c442" width="400" height="200">
+  </p>
+  <br>
+
+  ### 후위 순회(Postorder)
+  후위 순회는 두 자식 노드를 먼저 방문한 후 현재 노드를 방문하는 방법을 말한다.
+  <p align="center">
+    <img src="https://github.com/JeHeeYu/IT-Knowledge-Collection/assets/87363461/69a85296-da18-4671-9dc0-28c1f7ed88c3" width="400" height="200">
+  </p>
+  <br>
+  
 </details>
 
 # Database
