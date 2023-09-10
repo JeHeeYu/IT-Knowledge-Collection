@@ -89,12 +89,14 @@
       }
   }
   ```
+
   <p align="center">
     <img src="https://github.com/JeHeeYu/IT-Knowledge-Collection/assets/87363461/69a85296-da18-4671-9dc0-28c1f7ed88c3" width="400" height="200">
   </p>
   <br>
   
 </details>
+
 
 # Database
 
