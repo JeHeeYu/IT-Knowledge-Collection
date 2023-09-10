@@ -80,7 +80,7 @@
 
   ### 후위 순회(Postorder)
   후위 순회는 두 자식 노드를 먼저 방문한 후 현재 노드를 방문하는 방법을 말한다.
-    ```
+  ```
   void postOrderTraversal(TreeNode node) {
       if(node != null) {
           postOrderTraversal(node.left);
