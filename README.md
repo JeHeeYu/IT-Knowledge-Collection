@@ -312,5 +312,36 @@
   유저 모드와 다른 점은 ARM 프로세서 내부의 CPSR을 완전히 읽고 쓸 수 있으며, 특권 모드이다.
   > CPSR(Current Program Status Register)는 ARM 프로세서의 세부 상태를 저장하는 용도로 사용됨
 
-  
+<br>
+
+### IRQ(Interrupt ReQuest) 모드
+IRQ 모드는 ARM에서 사용하는 일반적인 인터럽트를 처리하는 모드이다.
+<br>
+외부 장치에서 요청되는 IRQ의 발생에 의해 ARM 프로세서는 IRQ 모드로 전환 후 인터럽트 작업을 처리한다.
+
+<br>
+
+### FIQ(Fast Interrupt reQuest) 모드
+FIQ 모드는 IRQ와 같이 인터럽트를 처리하는 모드인데, 인터럽트 중에서 빠르게(Fast) 인터럽트를 처리하는 모드를 말한다.
+<br>
+외부 장치에서 요청되는 FIQ의 발생에 의해 ARM 프로세서는 FIQ 모드로 전환 후 인터럽트 작업을 처리한다.
+<br>
+<br>
+빠른 처리를 위해 Exception Vector 에서도 최하단에 존재하고 별도의 레지스터를 보유한다.
+
+<br>
+
+### SVC(Supervisor) 모드
+SVC 모드는 시스템 자원 대부분을 자유롭게 관리할 수 있는 모드이다.
+<br>
+커널이나 디바이스 드라이버를 처리할 때 사용(System Call)하는 모드이기도 하다.
+<br>
+<br>
+외부에서 Reset 신호 또는 SWI(SoftWare Interface) 신호가 발생하면 SVC 모드로 전환된다.
+
+<br>
+
+### 
+
+
 </details>
