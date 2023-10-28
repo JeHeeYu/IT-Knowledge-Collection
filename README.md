@@ -275,4 +275,14 @@
 
 <br>
 
-# Firmware
+# Embedded
+
+<details>
+
+  <summary><h3>ARM 레지스터 종류</h3></summary> 
+
+  
+
+  
+  
+</details>
