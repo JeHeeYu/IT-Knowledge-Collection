@@ -11,6 +11,7 @@
 
 # Operating System
 - [프로세스 스케줄링 종류와 기법](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Operating%20System/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%20%EC%A2%85%EB%A5%98%EC%99%80%20%EA%B8%B0%EB%B2%95.md)
+- [뮤텍스(Mutex)와 세마포어(Semaphore)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Operating%20System/%EB%AE%A4%ED%85%8D%EC%8A%A4(Mutex)%EC%99%80%20%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4(Semaphore).md)
 
 <br>
 
