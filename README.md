@@ -174,6 +174,183 @@
   
 </details>
 
+<details>
+  <summary><h3>얕은 복사와 깊은 복사</h3></summary>
+  
+  ### 얕은 복사(Shallow Copy)
+  얕은 복사는 객체가 가진 멤버들의 값을 새로운 객체로 복사하는데 만약 객체가 참조 타입의 멤버를 가지고 있다면 참조 값만 복사가 된다.
+  <br>
+  즉, 얕은 복사의 경우 동적 할당을 받은 변수의 주소 값을 공유한다.
+  <br>
+  아래는 얕은 복사의 예제 코드이다.
+
+  ```
+  #include <iostream>
+  #include <cstring>
+  
+  using namespace std;
+  
+  class A
+  {
+  private:
+      char* name;
+      int age;
+      
+  public:
+      A(char* myName, int myAge) : age(myAge)
+      {
+          name = new char[strlen(myName) + 1];
+          strcpy(name, myName);
+      }
+      
+      ~A()
+      {
+          delete []name;
+          cout << "소멸자 호출" << endl;
+      }
+      
+      void show() const
+      {
+          cout << "이름 : " << name << endl;
+          cout << "나이 : " << age << endl;
+      }
+  };
+  
+  int main()
+  {
+      A a("홍길동", 20);
+      A b = a;
+      
+      a.show();
+      b.show();
+  
+      return 0;
+  }
+
+  // 실행 결과
+  이름 : 홍길동
+  나이 : 20
+  이름 : 홍길동
+  나이 : 20
+  소멸자 호출
+  ```
+
+  A클래스의 객체 a와 b가 있으며, a는 객체 생성 시 초기화를 했다.
+  <br>
+  반면 b는 a의 디폴트 복사 생성자에 의해 멤버 대 멤버 복사가 일어났다.
+  <br>
+  즉, 여기서 얕은 복사가 일어났다.
+  <br>
+  <br>
+  근데 객체는 2개이나, 소멸자가 한 번만 호출 되었다.
+  <br>
+  그 이유는 char* 포인터인 name 때문이다.
+  <br>
+  멤버 대 멤버 복사이기 때문에 객체 a의 name을 가리키는 주소 값을 b도 같이 할당 받아 두 객체가 같은 문자열을 참조하는 문제가 생긴다.
+  <br>
+  <br>
+  그래서 만약 객체 a가 소멸된다고 가정하면 a의 소멸자 호출이 일어나면서 delete를 해준다.
+  <br>
+  하지만 b의 소멸자 호출이 일어나면 이미 소멸된 문자열을 대상으로 delete 하기 때문에 문제가 발생한다.
+  <br>
+  하지만 변수가 힙의 메모리 공간을 참조하지 않는다면 별다른 문제가 생기지 않는다.
+  <br>
+  <br>
+  이처럼 얕은 복사는 간단하지만 멤버 변수에 따른 문제점이 발생하는 것을 고려해야 한다.
+
+  <br>
+
+  ### 깊은 복사(Deep Copy)
+  깊은 복사는 전체 복사로 생각할 수 있다.
+  <br>
+  얕은 복사와 달리 객체가 가진 모든 멤버를 복사하는 것을 말한다.
+  <br>
+  객체가 참조 타입의 멤버를 포함할 경우 참조 값의 복사가 아닌 참조된 객체 자체가 복사되는 것을 말한다.
+  <br>
+  <br>
+  즉, 깊은 복사는 새로 동적 할당을 받고, 원본의 데이터를 복사한다.
+  <br>
+  아래는 깊은 복사의 예제 코드이다.
+
+  ```
+  #include <iostream>
+  #include <cstring>
+  
+  using namespace std;
+  
+  class A
+  {
+  private:
+      char* name;
+      int age;
+      
+  public:
+      A(char* myName, int myAge) : age(myAge)
+      {
+          name = new char[strlen(myName) + 1];
+          strcpy(name, myName);
+      }
+      
+      A(const A &copy) : age(copy.age)
+      {
+          name = new char[strlen(copy.name) + 1];
+          strcpy(name, copy.name);
+      }
+      
+      ~A()
+      {
+          delete []name;
+          cout << "소멸자 호출" << endl;
+      }
+      
+      void show() const
+      {
+          cout << "이름 : " << name << endl;
+          cout << "나이 : " << age << endl;
+      }
+  };
+  
+  int main()
+  {
+      A a("홍길동", 20);
+      A b = a;
+      
+      a.show();
+      b.show();
+  
+      return 0;
+  }
+
+  // 실행 결과
+  이름 : 홍길동
+  나이 : 20
+  이름 : 홍길동
+  나이 : 20
+  소멸자 호출
+  소멸자 호출
+  ```
+  
+
+  기존의 얕은 복사에서는 소멸자가 한 번만 호출되었다면 여기서는 두 번 호출되었다.
+  <br>
+  복사 생성자에서 const를 인자로 받는데, 그 이유는 기존의 객체의 멤버 변수 값을 건드리지 않겠다는 의미이다.
+
+  <br>
+
+  ### 복사 생성자(Copy Constructor)
+  C++에서 복사 생성자란 자신과 <b>같은 클래스 타입의 다른 객체에 대한 참조를 인수로 전달 받아 그 참조를 가지고 자신을 초기화</b>하는 방법이다.
+  <br>
+  복사 생성자는 새롭게 생성되는 객체가 원본 객체와 같으면서도, 완전한 독립성을 가지게 해준다.
+  <br>
+  왜냐하면 복사 생성자를 이용한 대입은 깊은 복사를 통한 값이기 때문이다.
+  <br>
+  <br>
+  복사 생성자는 다음과 같은 상황에서 주로 사용된다.
+  - 객체가 함수에 인수로 전달될 때
+  - 함수가 객체를 반환 값으로 반환할 때
+  - 새로운 객체를 같은 클래스 타입의 기존 객체와 똑같이 초기화할 때
+</details>
+
 <br>
 
 # Algorithm
