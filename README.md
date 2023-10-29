@@ -33,3 +33,8 @@
 # ARM Architecture
 - [ARM 구성 Register](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/ARM%20Architecture/ARM%20%EA%B5%AC%EC%84%B1%20Register.md)
 - [ARM 프로세서의 동작 모드](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/ARM%20Architecture/ARM%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C%EC%9D%98%20%EB%8F%99%EC%9E%91%20%EB%AA%A8%EB%93%9C.md)
+
+<br>
+
+# Embedded
+- [ADC(Analog Digital Converter)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Embedded/ADC(Analog%20Digital%20Converter).md)
