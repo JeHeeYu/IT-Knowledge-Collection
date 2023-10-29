@@ -38,3 +38,4 @@
 
 # Embedded
 - [ADC(Analog Digital Converter)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Embedded/ADC(Analog%20Digital%20Converter).md)
+- [타이머(Timer)와 PWM(Pulse Width Modulation)](https://github.com/JeHeeYu/IT-Knowledge-Collection/blob/main/Embedded/%ED%83%80%EC%9D%B4%EB%A8%B8(Timer)%EC%99%80%20PWM(Pulse%20Width%20Modulation).md)
